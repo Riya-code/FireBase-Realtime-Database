@@ -1,2 +1,3 @@
 # FireBase-Realtime-Dtabase
-Firebase Read and Update Data functionality
+Learn Firebase Read and Update Data functionality.
+#Beginner-friendly 
