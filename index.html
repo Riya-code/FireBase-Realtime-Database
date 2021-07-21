@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Firebase</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+    </head>
+    <body>
+
+        <h1>Firebase App</h1>
+        
+        <button id="btn">Submit</button>
+        <button id="btn2">Update</button>
+         
+        
+
+        
+
+            <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR-API-KEY",
+            authDomain: "example.firebaseapp.com",
+            databaseURL: "https://example.firebaseio.com",
+            projectId: "YOUR-PROJECT-ID",
+            storageBucket: "example.appspot.com",
+            messagingSenderId: "messagingSenderId",
+            appId: "YOUR-appId"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        var userID ="userID";
+        var firebaseRef = firebase.database().ref('users/'+userID);
+
+        var data = {
+            username:"Riya",
+            password:"RiyaPassword"
+        };
+
+        
+
+        // data to store
+        document.getElementById('btn').onclick = function(){
+        firebaseRef.set(data);
+        }
+
+        var newData = {
+            asername:"RK",
+            password:"anotherPassword",
+            game: "1"
+        }
+
+        document.getElementById('btn2').onclick = function(){
+        firebaseRef.update(newData);
+        }
+
+        </script>
+
+    </body>
+</html>
